@@ -51,30 +51,41 @@
             <table class="tables">
                 <tr style="width:100%">
                     <td class="style1">
-                        <asp:ImageButton class="imgbttn" ID="sprite" runat="server" OnClick="agregarProducto" alt="Logo Sprite" src="http://i.forbesimg.com/media/lists/companies/sprite_416x416.jpg" />
+                        <asp:ImageButton class="imgbttn" ID="ckc" runat="server" OnClick="agregarProducto"  alternatetext="Logo Coca Cola"  style="width:200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1024px-Coca-Cola_logo.svg.png" />
                     </td>
                     <td class="style1">
-                        <asp:ImageButton class="imgbttn" ID="coke" runat="server" OnClick="agregarProducto"  alt="Logo Coca Cola"  style="width:200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1024px-Coca-Cola_logo.svg.png" />
+                        <asp:ImageButton class="imgbttn" ID="spr" runat="server" OnClick="agregarProducto" alternatetext="Logo Sprite" src="http://i.forbesimg.com/media/lists/companies/sprite_416x416.jpg" />
                     </td>
                     <td class="style1">
-                        <asp:ImageButton class="imgbttn" ID="fanta" runat="server" OnClick="agregarProducto" alt="Logo Fanta" src="https://yt3.ggpht.com/-2f11OmAvQlg/AAAAAAAAAAI/AAAAAAAAAAA/FVF84Ngxvsk/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" />
+                        <asp:ImageButton class="imgbttn" ID="fnt" runat="server" OnClick="agregarProducto" alternatetext="Logo Fanta" src="https://yt3.ggpht.com/-2f11OmAvQlg/AAAAAAAAAAI/AAAAAAAAAAA/FVF84Ngxvsk/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" />
                     </td>
                     <td class="style1">
-                        <asp:ImageButton class="imgbttn" ID="apple" runat="server" OnClick="agregarProducto" alt="Logo Manzana" src="http://www.vector-logo.net/logo_preview/eps/m/Manzana_Lift.png" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    
-                        <asp:ListBox ID="Lista" runat="server" Height="99px" Width="276px">
-
-                        </asp:ListBox>
-                    
-                        <asp:Label ID="Label1" runat="server" Text="Total: "></asp:Label>
-                    
+                        <asp:ImageButton class="imgbttn" ID="mnz" runat="server" OnClick="agregarProducto" alternatetext="Logo Manzana" src="http://www.vector-logo.net/logo_preview/eps/m/Manzana_Lift.png" />
                     </td>
                 </tr>
             </table>
+            <asp:Table ID="Table1" runat="server">
+                <asp:TableHeaderRow>
+                    <asp:TableHeaderCell>
+                        Cantidad
+                    </asp:TableHeaderCell>
+                    <asp:TableHeaderCell>
+                        Nombre
+                    </asp:TableHeaderCell>
+                    <asp:TableHeaderCell>
+                        Precio Unitario
+                    </asp:TableHeaderCell>
+                    <asp:TableHeaderCell>
+                        Precio bruto
+                    </asp:TableHeaderCell>
+                    <asp:TableHeaderCell>
+                        IVA
+                    </asp:TableHeaderCell>
+                    <asp:TableHeaderCell>
+                        Precio Total
+                    </asp:TableHeaderCell>
+                </asp:TableHeaderRow>
+            </asp:Table>
         </div>
         </form>
     </body>
