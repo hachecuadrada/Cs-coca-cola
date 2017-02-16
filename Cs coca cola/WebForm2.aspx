@@ -66,7 +66,7 @@
                 <tr>
                     <td>
                     
-                        <asp:ListBox ID="Lista" runat="server" Height="99px" Width="276px" OnTextChanged="Lista_TextChanged">
+                        <asp:ListBox ID="Lista" runat="server" Height="99px" Width="276px">
 
                         </asp:ListBox>
                     
@@ -75,55 +75,6 @@
                     </td>
                 </tr>
             </table>
-        </div>
-            <br />
-        <div id="resultado">
-            <asp:Table ID="Table1" runat="server" OnLoad="Table1_Load" CssClass="tables">
-                <asp:TableHeaderRow>
-                    <asp:TableHeaderCell>
-                        Cantidad
-                    </asp:TableHeaderCell>
-                    <asp:TableHeaderCell>
-                        Descripción
-                    </asp:TableHeaderCell>
-                    <asp:TableHeaderCell>
-                        Precio unitario
-                    </asp:TableHeaderCell>
-                    <asp:TableHeaderCell>
-                        Precio antes de impuestos
-                    </asp:TableHeaderCell>
-                    <asp:TableHeaderCell>
-                        Impuestos
-                    </asp:TableHeaderCell>
-                    <asp:TableHeaderCell>
-                        Precio total
-                    </asp:TableHeaderCell>
-                </asp:TableHeaderRow>
-            </asp:Table>
-        </div>
-        <div>
-            <asp:Table ID="Table2" runat="server">
-                <asp:TableHeaderRow>
-                    <asp:TableHeaderCell>
-                        Cantidad
-                    </asp:TableHeaderCell>
-                    <asp:TableHeaderCell>
-                        Descripción
-                    </asp:TableHeaderCell>
-                    <asp:TableHeaderCell>
-                        Precio unitario
-                    </asp:TableHeaderCell>
-                    <asp:TableHeaderCell>
-                        Precio antes de impuestos
-                    </asp:TableHeaderCell>
-                    <asp:TableHeaderCell>
-                        Impuestos
-                    </asp:TableHeaderCell>
-                    <asp:TableHeaderCell>
-                        Precio total
-                    </asp:TableHeaderCell>
-                </asp:TableHeaderRow>
-            </asp:Table>
         </div>
         </form>
     </body>
