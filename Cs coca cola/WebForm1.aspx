@@ -19,16 +19,16 @@
     <form id="form1" runat="server">
     <table align="center" width="1024">
         <tr>
-            <td colspan=2>
+            <td colspan="2">
                 Coca Cola en el mundo</td>
-            <td colspan=2>
+            <td colspan="2">
                 Coca Cola México</td>
-            <td colspan=4 align="right">
+            <td colspan="4" align="right">
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                 </td>
         </tr>
         <tr>
-            <td colspan=8 align="center" height="80">
+            <td colspan="8" align="center" height="80">
                 <asp:Image ID="Image1" runat="server" 
                     
                     ImageUrl="http://www.netambulo.com/wp-content/uploads/2013/03/coca-cola-zero-listillos.jpg" 
@@ -54,20 +54,20 @@
                 Empleo</td>
         </tr>
         <tr>
-            <td colspan=8 class="style2" align="center">
+            <td colspan="8" class="style2" align="center">
                 <asp:Image ID="Image2" runat="server" 
                     ImageUrl="http://www.coca-colamexico.com.mx/homepage/_jcr_content/heroSlideshowPar/heroslideshowct/smartslides/slide1.img.png/1486054695861.png" 
                     Width="1024" />
                 </td>
         </tr>
         <tr align="center">
-            <td colspan=2>
+            <td colspan="2">
                 Coca-Cola Original o Sin Azúcar</td>
-            <td colspan=2>
+            <td colspan="2">
                 A la Mexicana</td>
-            <td colspan=2>
+            <td colspan="2">
                 Centro de Innovación y Desarrollo</td>
-            <td colspan=2>
+            <td colspan="2">
                 Coca-Cola y el Agua</td>
         </tr>
         <tr>

@@ -9,33 +9,32 @@ namespace Cs_coca_cola
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        static int elementos = 4;
-        Producto[] pdc = new Producto[elementos];
-        String[] dts = new String[elementos];
-        ImageButton[] imgb = new ImageButton[elementos];
 
         protected void Page_LoadComplete(object sender, EventArgs e)
         {
-            cargaInicial();
+            if (!Carrito.yacargo)
+            {
+                cargaInicial();
+                Carrito.yacargo = true;
+            }
         }
 
         protected void cargaInicial()
         {
-            dts[0] = "Coca Cola-12";
-            dts[1] = "Sprite-10";
-            dts[2] = "Fanta-9";
-            dts[3] = "Manzana Lift-8";
-            for (int i = 0; i < elementos; i++)
+            Carrito.dts[0] = "Coca Cola-12";
+            Carrito.dts[1] = "Sprite-10";
+            Carrito.dts[2] = "Fanta-9";
+            Carrito.dts[3] = "Manzana Lift-8";
+            for (int i = 0; i < Carrito.elementos; i++)
             {
-                pdc[i] = new Producto();
-                pdc[i].Nombre = dts[i].Split('-')[0];
-                pdc[i].Precio = Convert.ToInt32(dts[i].Split('-')[1]);
+                Carrito.pdc[i] = new Producto();
+                Carrito.pdc[i].Nombre = Carrito.dts[i].Split('-')[0];
+                Carrito.pdc[i].Precio = Convert.ToInt32(Carrito.dts[i].Split('-')[1]);
             }
-            imgb[0] = ckc;
-            imgb[1] = spr;
-            imgb[2] = fnt;
-            imgb[3] = mnz;
-
+            Carrito.imgb[0] = ckc;
+            Carrito.imgb[1] = spr;
+            Carrito.imgb[2] = fnt;
+            Carrito.imgb[3] = mnz;
         }
 
         protected void cambioElemento()
@@ -46,22 +45,26 @@ namespace Cs_coca_cola
                 Table1.Rows.RemoveAt(lineas);
                 lineas--;
             }
-            for (int i = 0; i < elementos; i++)
+            for (int i = 0; i < Carrito.elementos; i++)
             {
-                if (pdc[i].Cantidad > 0)
+                if (Carrito.pdc[i].Cantidad > 0)
                 {
                     TableRow tbr = new TableRow();
                     TableCell[] cll = new TableCell[6];
-                    for (int ii = 0; ii < elementos; ii++)
+                    for (int ii = 0; ii < 6; ii++)
                     {
+                        cll[ii] = new TableCell();
                         tbr.Cells.Add(cll[ii]);
                     }
-                    tbr.Cells[0].Text = pdc[i].Cantidad.ToString();
-                    tbr.Cells[1].Text = pdc[i].Nombre;
-                    tbr.Cells[2].Text = pdc[i].Precio.ToString();
-                    tbr.Cells[3].Text = (pdc[i].Precio*pdc[i].Cantidad).ToString();
-                    tbr.Cells[4].Text = ((pdc[i].Precio * pdc[i].Cantidad)*.16).ToString();
-                    tbr.Cells[4].Text = ((pdc[i].Precio * pdc[i].Cantidad) * 1.16).ToString();
+                    tbr.Cells[0].Text = Carrito.pdc[i].Cantidad.ToString();
+                    tbr.Cells[1].Text = Carrito.pdc[i].Nombre;
+                    tbr.Cells[2].Text = Carrito.pdc[i].Precio.ToString();
+                    double bruto = Carrito.pdc[i].Precio * Carrito.pdc[i].Cantidad;
+                    tbr.Cells[3].Text = Math.Round(bruto, 2).ToString();
+                    double IVA = bruto * .16;
+                    tbr.Cells[4].Text = Math.Round(IVA,2).ToString();
+                    double total = bruto + IVA;
+                    tbr.Cells[5].Text = Math.Round(total, 2).ToString();
                     Table1.Rows.Add(tbr);
                 }
             }
@@ -70,11 +73,11 @@ namespace Cs_coca_cola
         protected void agregarProducto(object sender, ImageClickEventArgs e)
         {
             ImageButton btn = (ImageButton)sender;
-            for(int i = 0; i < elementos; i++)
+            for(int i = 0; i < Carrito.elementos; i++)
             {
-                if(imgb[i].Equals(btn))
+                if(Carrito.imgb[i].ID.Equals(btn.ID))
                 {
-                    pdc[i].Cantidad++;
+                    Carrito.pdc[i].Cantidad++;
                     break;
                 }
             }
